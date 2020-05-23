@@ -1,3 +1,11 @@
+# WhatsUp
+
+WhatsApp clone project to kill boredom during lockdown
+
+<p align="center">
+  <img src="demo.gif" alt="Demo gif"/>
+</p>
+
 ## DONE
 - (Page) Initial tabs
 - (Animation) Hide header on scroll
@@ -32,3 +40,5 @@
 - (Refactor) Improve tabs at home page
 - (Refactor) Use new icon component
 - (Style) Polish palette color
+- (Bug) When you press sroll to bottom arrow, floating date does not update
+- (Bug) Sometimes chat hides last message when keyboard is displayed
