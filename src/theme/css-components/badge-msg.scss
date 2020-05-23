@@ -1,0 +1,22 @@
+.badge {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    font-weight: 600;
+    font-size: 12px;
+
+    div {
+        margin: auto;
+    }
+
+    &--segment {
+        color: #075e54;
+        background-color: white;
+    }
+
+    &--chat {
+        color: white;
+        background-color: #00CC46;
+    }
+}

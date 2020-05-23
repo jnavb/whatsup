@@ -1,0 +1,44 @@
+ion-content {
+    --background: #EFE7DD;
+}
+
+.content-inner {
+    min-height: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 66px;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: url(/assets/images/chat-bg.png);
+        background-repeat: repeat;
+        opacity: .06;
+    }
+
+    app-chat-input {
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+}
+
+.floating {
+    position: fixed;
+    z-index: 9;
+
+    &-date {
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 2px;
+    }
+
+    &-arrow {
+        bottom: 75px;
+        right: 12px;
+    }
+}

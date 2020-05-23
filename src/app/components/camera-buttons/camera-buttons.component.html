@@ -1,0 +1,13 @@
+<ion-buttons>
+    <app-flash-button (click)="toggleFlash()"></app-flash-button>
+</ion-buttons>
+
+<div (click)="onShot()" class="shot__btn"></div>
+
+<ion-buttons>
+    <ion-button class="btn" (click)="onSwitchCamera()">
+        <ion-icon slot="icon-only" name="camera-reverse"></ion-icon>
+    </ion-button>
+</ion-buttons>
+
+<span class="shot__label">Hold for video, tap for photo</span>

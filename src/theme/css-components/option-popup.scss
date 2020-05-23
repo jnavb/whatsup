@@ -1,0 +1,7 @@
+.custom-options .popover-content {
+    top: 4px !important;
+    left: calc(100vw - 200px - 4px) !important;
+    width: 200px;
+    border-radius: 2px;
+    box-shadow: var(--md-shadow);
+}

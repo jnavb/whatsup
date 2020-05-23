@@ -1,0 +1,125 @@
+@import 'fonts';
+
+:host {
+    --height: 77px;
+    --margin-horizontal: 13px;
+    --avatar-profie-size: 53px;
+    --avatar-width: calc(var(--avatar-profie-size) + (var(--margin-horizontal) * 2));
+    --margin-icon: 2px;
+    --font-size-title: 16px;
+    --font-size-subtitle: 14px;
+    --font-size-timeline: 12px;
+}
+
+.chat {
+    position: relative;
+    height: var(--height);
+    display: flex;
+    position: relative;
+    color: #6e6e6e;
+    font-size: var(--font-size-subtitle);
+
+    &__avatar {
+        position: absolute;
+        z-index: 9;
+        width: 22%;
+        display: flex;
+        height: var(--height);
+        width: var(--avatar-width);
+
+        &:active {
+            filter: contrast(0.75);
+        }
+    }
+
+    &__image {
+        margin: auto 0;
+        margin-left: var(--margin-horizontal);
+        height: var(--avatar-profie-size);
+        width: var(--avatar-profie-size);
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+
+    &__content {
+        display: flex;
+        width: 100%;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            height: 1px;
+            width: calc(100% - var(--avatar-width) - var(--margin-horizontal));
+            background-color: #f1f1f1;
+            margin-left: var(--avatar-width);
+        }
+    }
+
+    &__content-inner {
+        margin-left: var(--avatar-width);
+        margin-right: var(--margin-horizontal);
+    }
+
+    &__content-primary,
+    &__content-secondary {
+        display: flex;
+        align-items: center;
+    }
+
+    &__content-primary {
+        margin-bottom: 4px;
+    }
+
+    &__title {
+        @include font-semibold;
+        margin-right: auto;
+        color: black;
+        font-size: var(--font-size-title);
+    }
+
+    &__timeline {
+        font-size: var(--font-size-timeline);
+
+        &--new {
+            color: #00CC46;
+        }
+    }
+
+    &__highlight {
+        color: #34b7f1;
+    }
+
+}
+
+.message {
+    display: flex;
+    margin-right: auto;
+    align-items: center;
+
+    div {
+        display: flex;
+        align-items: center;
+    }
+}
+
+
+.icon {
+    font-size: 14px;
+    margin-right: var(--margin-icon);
+
+    &-mic {
+        font-size: 17px;
+        color: #34b7f1;
+        margin-right: 0;
+    }
+
+    &--checked {
+        color: #34b7f1;
+    }
+}

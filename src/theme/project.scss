@@ -1,0 +1,10 @@
+input,
+textarea {
+  padding: 0;
+  border: none;
+  caret-color: #075e54;
+
+  &:focus {
+    outline: none;
+  }
+}

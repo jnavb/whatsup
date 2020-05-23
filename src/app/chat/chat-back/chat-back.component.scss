@@ -1,0 +1,30 @@
+:host {
+    position: relative;
+    overflow: hidden;
+    height: 40px;
+    width: 68px;
+    padding: 3px;
+    border-radius: 28% 28% 28% 28% / 50% 50% 50% 50% ;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow {
+    font-size: 22px;
+    color: white;
+}
+
+.avatar-box {
+    height: 35px;
+    min-width: 35px;
+    width: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        height: 100%;
+        object-fit: cover;
+    }
+}

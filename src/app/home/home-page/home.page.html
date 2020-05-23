@@ -1,0 +1,99 @@
+<div style="overflow-y: scroll;">
+
+  <div class="custom-header"
+    animateHeader
+    #animateHeader="animateHeader"
+    [content]="contentChat"
+    [slides]="slides"
+    [searchBar]="searchBar">
+    
+    <div #searchBar class="search-box">
+      <app-search-bar (text)="onSearch($event)"></app-search-bar>
+    </div>
+
+  <ion-toolbar class="toolbar toolbar__primary">
+    <ion-buttons slot="primary">
+      <ion-button (click)="onSettings($event)">
+        <ion-icon slot="icon-only" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>WhatsUp</ion-title>
+  </ion-toolbar>
+  
+  <ion-toolbar class="toolbar toolbar__secondary">
+    <ion-segment [(ngModel)]="activeSegment">
+      <ion-segment-button class="toolbar__segment-btn toolbar__segment-camera"
+        value="0"
+        layout="label-hide">
+        <ion-icon name="camera"></ion-icon>
+      </ion-segment-button>
+      <ion-segment-button class="toolbar__segment-btn toolbar__segment-chat"
+        value="1"
+        checked>
+        <div>
+          <span>CHATS</span>
+          <div *ngIf="unreadMessages" class="badge badge--segment">
+            <div>{{ unreadMessages }}</div>
+          </div>
+        </div>
+      </ion-segment-button>
+      <ion-segment-button class="toolbar__segment-btn"
+        value="2">
+        STATUS
+      </ion-segment-button>
+      <ion-segment-button class="toolbar__segment-btn"
+        value="3">
+        CALLS
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  </div>
+  
+  <ion-slides #slides class="custom-body"
+    swipeHandler
+    scrollbar="false"
+    [activeSlideIndex]="activeSlide"
+    [animateHeader]=animateHeader
+    [options]="{ initialSlide: 1, resistanceRatio: 0 }"
+    (ionSlideDidChange)="ionSlideDidChange()"
+    (ionSlideWillChange)="ionSlideWillChange()"
+    (ionSlideTouchEnd)="ionSlideTouchEnd()">
+
+    <ion-slide #cameraSlide class="slide__camera">
+      <ion-content style="--background: transparent;">
+        <app-camera-buttons></app-camera-buttons>
+      </ion-content>
+    </ion-slide>
+
+    <ion-slide class="slide slide__chats">
+      <ion-content
+        #contentChat
+        [scrollEvents]="true">
+        <app-chat-item
+          *ngFor="let preview of chatsPreview; let i = index;"
+          [chat]="preview"
+          [searchText]="preview.searchResult"
+          (item)="onChat(i)"></app-chat-item>
+      </ion-content>
+    </ion-slide>
+
+    <ion-slide class="slide slide__status">
+      <ion-content>
+        <app-status-item
+          [data]="status$ | async"
+          (click)="onStatus()"></app-status-item>
+        <app-divider-list text="Status list"></app-divider-list>
+      </ion-content>
+    </ion-slide>
+
+    <ion-slide class="slide slide__calls">
+      <ion-content>
+        <app-call-item
+          *ngFor="let call of calls$ | async"
+          [call]="call"
+          (click)="onCall()"></app-call-item>
+      </ion-content>
+    </ion-slide>
+  </ion-slides>
+
+</div>

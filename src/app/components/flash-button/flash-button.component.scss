@@ -1,0 +1,22 @@
+.btn-flash {
+    position: relative;
+    width: 150px;
+    height: 150px;
+
+    ion-icon {
+        position: absolute;
+        font-size: 26px;
+        margin-bottom: 8px;
+        transition: transform .3s;
+    }
+
+    ion-icon:first-child {
+        top: -45px;
+    }
+
+    &--off ion-icon {
+        transform: translateY(45px);
+    }
+
+}
+

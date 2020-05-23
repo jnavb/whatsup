@@ -1,0 +1,19 @@
+<ng-container *ngFor="let message of messages; let index=index; trackBy:trackByIndex">
+
+  <!-- LAST MESSAGE OF DAY -->
+  <ng-container *ngIf="message | diffDay: messages[index + 1]; else normalMessage">
+    <app-chat-message #lastMessageOfDay
+    [message]="message"
+    [ngClass]="{ 'same-minute-span' : message | sameMinute: messages[index - 1] }"></app-chat-message>
+    <app-chat-date
+      [date]="messages[index + 1].date"></app-chat-date>
+  </ng-container>
+
+  <!-- NORMAL MESSAGE -->
+  <ng-template #normalMessage>
+    <app-chat-message
+      [message]="message"
+      [ngClass]="{ 'same-minute-span' : message | sameMinute: messages[index - 1] }"></app-chat-message>
+  </ng-template>
+    
+</ng-container>

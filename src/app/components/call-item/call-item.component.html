@@ -1,0 +1,30 @@
+<ng-container *ngIf="call">
+ 
+  <div class="call">
+    <div class="call__avatar">
+      <div class="call__image"
+        [ngStyle]="{'background-image': 'url(' + call.img + ')'}"></div>
+    </div>
+    
+    <div class="call__content ion-activatable">
+      <ion-ripple-effect type="bounded"></ion-ripple-effect>
+      <div class="call__content-inner">
+        <div class="call__content-left">
+          <div class="call__title">{{ call.title }}</div>
+          <div class="call__subtitle">
+            <ion-icon class="call__arrow"
+            [ngClass]="{
+              'call__arrow--in': call.receiverType === 'IN',
+              'call__arrow--out': call.receiverType === 'OUT'}"
+              src="assets/icons/call-arrow.svg"></ion-icon>
+              <span *ngIf="call.accumulator > 0">({{ call.accumulator }})</span>
+              <span>{{ call.date | date: 'MMMM d, hh:mm' }}</span>
+            </div>
+          </div>
+          <ion-icon class="call__icon"
+            [src]="'assets/icons/' + call.mediaType + '.svg'"></ion-icon>
+        </div>
+      </div>      
+    </div>
+    
+</ng-container>

@@ -1,0 +1,139 @@
+@import 'fonts';
+
+ion-slides {
+    z-index: 1;
+    height: calc(100vh + 50px);
+}
+ion-slide {
+    background: white;
+    padding-top: 100px;
+}
+
+ion-content {
+    --padding-bottom: 80px;
+}
+
+.custom-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 9;
+    box-shadow: var(--md-shadow);
+}
+
+.search-box {
+    position: absolute;
+    z-index: 9999;
+    display: flex;
+    height: 52px;
+    overflow: hidden;
+    width: 100vw;
+    padding-right: 50px;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+.toolbar-test {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.toolbar {
+    background: #075e54;
+    --background: #075e54;
+    --color: #FFFFFF;
+
+    &__segment-btn {
+        height: 50px;
+        min-height: 50px;
+        font-weight: bolder;
+        --color: #ffffff87;
+        --color-checked: #FFFFFF;
+        --padding-start: 0;
+        --padding-end: 0;
+        --margin-top: 2px;
+    }
+
+    &__segment-camera {
+        overflow: hidden;
+        min-width: 1%;
+        width: 1%;
+        --padding-start: 0;
+        --padding-end: 0;
+
+    }
+
+    &__segment-chat > div {
+        display: flex;
+        align-items: center;
+
+        span {
+            margin-right: 6px;
+        }
+    }
+
+    &__primary {
+        @include font-semibold;
+        --min-height: 50px;
+        height: 50px;
+    }
+
+    &__secondary {
+        --min-height: 50px;
+    }
+}
+
+.slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    // margin-top: 100px; // 2 headers 50px + 50px
+
+    &__camera {
+        position: relative;
+        background: transparent;
+    
+        app-camera-buttons {
+            position: absolute;
+            bottom: 8px;
+        }
+    }
+    
+    &__chats {
+        app-chat-item {
+            width: 100%;
+        }
+    }
+
+    &__chats,
+    &__status,
+    &__calls {
+        height: 100%;
+    }
+
+    &__camera {
+        height: 100vh;
+    }
+    
+}
+
+.fab-btn {
+    height: 50px;
+    width: 50px;
+    --background: #3fc12a;
+}
+
+
+
+
+
+// #FFFFFF
+// #00CC46	rgb(37, 211, 102)
+// #075e54	rgb(7, 94, 84)
+// #128c7e	rgb(18, 140, 126)
+// #dcf8c6	rgb(220, 248, 198)
+// #34b7f1	rgb(52, 183, 241)
+
+// #444b53 grey-dark
+// #DFDFDF grey-light

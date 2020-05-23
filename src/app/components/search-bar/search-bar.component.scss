@@ -1,0 +1,68 @@
+ion-buttons {
+    height: 100%;
+}
+
+.search-bar {
+    position: relative;
+    color: white;
+
+    &__background {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        height: 200vw;
+        width: 200vw;
+        background: white;
+        z-index: 1;
+        display: inline-flex;
+        border-radius: 50%;
+
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 400ms;
+    }
+
+    &__box {
+        position: absolute;
+        display: inline-flex;
+        background: transparent;
+        pointer-events: all;
+        z-index: 1;
+        left: -76vw; // FIX ME
+        height: 100%;
+
+        opacity: 0;
+        width: 0%;
+        transform: translateX(-100px);
+        transition: opacity 400ms cubic-bezier(0.12,-0.73, 0, 0.28);
+    }
+
+    &__back {
+        font-size: 12px;
+        --color: #075e54;
+        --color-activated: #075e54;
+    }
+
+    &__cancel {
+        --color: #6b6b6b;
+        --color-activated: #6b6b6b;
+    }
+
+    &__input {
+        background: inherit;
+        border: none;
+        width: 100%;
+        color: initial;
+    }
+
+    &--show {
+        .search-bar__background {
+            transform: translate(-50%, -50%) scale(1);
+        }
+        .search-bar__box {
+            opacity: 1;
+            width: 100vw;
+            transform: translateX(0px);
+        }
+    }
+    
+}

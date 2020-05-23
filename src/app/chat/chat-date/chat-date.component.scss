@@ -1,0 +1,14 @@
+.date {
+    background-color: #D4EAF4;
+    font-size: 12px;
+    border-radius: 4px;
+    box-shadow: 0px 1px 8px -3px grey;
+    padding: 6px;
+    color: #617379;
+    transition: transform 200ms;
+
+    &--hide {
+        transform: translateY(-50px);
+        transition: transform 0ms;
+    }
+}

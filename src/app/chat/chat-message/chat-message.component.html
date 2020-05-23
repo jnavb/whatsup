@@ -1,0 +1,11 @@
+<span>
+    <div
+        *ngIf="message.from"
+        class="message__author">{{ message.from }}</div>
+    <span
+        [innerText]="message.text"></span>
+</span>
+<div class="message__info">
+    <span class="message__hour">{{ message.date | date:'HH:mm' }}</span>
+    <ion-icon class="message__tick" src="assets/icons/tick.svg"></ion-icon>
+</div>
