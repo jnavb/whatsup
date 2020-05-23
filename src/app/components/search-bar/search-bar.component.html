@@ -1,0 +1,21 @@
+<ion-buttons>
+    <div class="search-bar" [ngClass]="{'search-bar--show': isOpen}">
+        
+        <ion-button (click)="onToggle()">
+            <ion-icon slot="icon-only" name="search"></ion-icon>
+        </ion-button>
+        
+        <div class="search-bar__background"></div>
+        
+        <div class="search-bar__box">
+            <ion-button (click)="onToggle()" class="search-bar__back">
+                <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+            </ion-button>
+            <input #input class="search-bar__input" type="text" placeholder="Search...">
+            <ion-button class="search-bar__cancel" (click)="onCancel()">
+                <ion-icon slot="icon-only" name="close"></ion-icon>
+            </ion-button>
+        </div>
+    </div>
+</ion-buttons>
+    

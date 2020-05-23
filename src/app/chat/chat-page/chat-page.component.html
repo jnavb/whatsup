@@ -1,0 +1,25 @@
+<ion-header>
+  <app-chat-header
+    [preview]="preview"
+    [members]="chat.meta?.members"></app-chat-header>
+</ion-header>
+
+<ion-content #ionContent scrollEvents="true">
+
+  <app-chat-date class="floating floating-date"
+    [date]="floatingDate"
+    hideMode></app-chat-date>
+  <app-chat-arrow class="floating floating-arrow"
+    [ionContent]="ionContent"
+    (click)="onDoubleArrow()"></app-chat-arrow>
+
+  <div class="content-inner">
+
+    <app-chat-message-wrapper
+      [messages]="chat?.messages"
+      (dayInScroll)="onDayScrollChange($event)"></app-chat-message-wrapper>
+
+    <app-chat-input (send)="onSendMessage($event)"></app-chat-input>
+  </div>
+</ion-content>
+

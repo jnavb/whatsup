@@ -1,0 +1,17 @@
+<div class="status">
+  <div class="status__avatar">
+    <div class="status__image" [ngStyle]="{'background-image': 'url(' + data?.img + ')'}">
+      <ion-icon class="status__image-icon" src="assets/icons/plus.svg"></ion-icon>
+      <div class="status__image-icon-background"></div>
+    </div>
+  </div>
+
+  <div class="status__content ion-activatable">
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+    <div class="status__content-inner">
+      <div class="status__title">{{ data?.title }}</div>
+      <div class="status__subtitle">{{ data?.subtitle }}</div>
+    </div>
+  </div>
+
+</div>

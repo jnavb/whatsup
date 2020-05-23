@@ -1,0 +1,20 @@
+:host {
+    --size-box: 38px;
+    --size-icon: 20px;
+    --background: transparent;
+    --color: #8A8F85;
+
+    overflow: hidden;
+    position: relative;
+    height: var(--size-box);
+    width: var(--size-box);
+    border-radius: 50%;
+    display: flex;
+    background: var(--background);
+}
+
+ion-icon {
+    font-size: var(--size-icon);
+    margin: auto;
+    color: var(--color);
+}

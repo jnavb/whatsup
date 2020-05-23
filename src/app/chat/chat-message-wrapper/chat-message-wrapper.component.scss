@@ -1,0 +1,21 @@
+@import 'fonts';
+
+:host {
+  display: flex;
+  flex-direction: column;
+
+  app-chat-message {
+    flex-shrink: 0;
+  }
+
+  app-chat-date {
+    z-index: 0;
+    align-self: center;
+    margin-top: 10px;
+  }
+}
+
+.same-minute-span {
+  --content-bubble: unset;
+  --margin-top: 4px;
+}

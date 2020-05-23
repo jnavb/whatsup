@@ -1,0 +1,33 @@
+:host {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    color: white;
+}
+
+.shot {
+    &__box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__btn {
+        height: 70px;
+        width: 70px;
+        border: 2px solid white;
+        border-radius: 50%;
+    }
+
+    &__label {
+        font-size: 14px;
+        margin-top: 8px;
+        flex-basis: 100%;
+    }
+}
+
+.btn {
+    font-size: 22px;
+    width: 52px !important;
+}

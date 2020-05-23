@@ -1,0 +1,58 @@
+:root {
+  --ion-font-family: OpenSans-Regular;
+}
+
+@mixin font-semibold {
+  font-family: OpenSans-SemiBold;
+}
+
+@font-face {
+  font-family: OpenSans-Bold;
+  font-style: bold;
+  src: url("/assets/fonts/OpenSans-Bold.ttf");
+}
+@font-face {
+  font-family: OpenSans-BoldItalic;
+  font-style: boldItalic;
+  src: url("/assets/fonts/OpenSans-BoldItalic.ttf");
+}
+@font-face {
+  font-family: OpenSans-ExtraBold;
+  font-style: extraBold;
+  src: url("/assets/fonts/OpenSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: OpenSans-ExtraBoldItalic;
+  font-style: extraBoldItalic;
+  src: url("/assets/fonts/OpenSans-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: OpenSans-Italic;
+  font-style: italic;
+  src: url("/assets/fonts/OpenSans-Italic.ttf");
+}
+@font-face {
+  font-family: OpenSans-Light;
+  font-style: light;
+  src: url("/assets/fonts/OpenSans-Light.ttf");
+}
+@font-face {
+  font-family: OpenSans-LightItalic;
+  font-style: lightItalic;
+  src: url("/assets/fonts/OpenSans-LightItalic.ttf");
+}
+@font-face {
+  font-family: OpenSans-Regular;
+  font-style: regular;
+  src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+@font-face {
+  font-family: OpenSans-SemiBold;
+  font-style: semibold;
+  src: url("/assets/fonts/OpenSans-SemiBold.ttf");
+}
+@font-face {
+  font-family: OpenSans-SemiBoldItalic;
+  font-style: semiBoldItalic;
+  src: url("/assets/fonts/OpenSans-SemiBoldItalic.ttf");
+}

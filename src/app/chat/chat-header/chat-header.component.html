@@ -1,0 +1,25 @@
+<ng-container *ngIf="preview">
+
+    <app-chat-back
+        [img]="preview.img"
+        (click)="onAvatar()"></app-chat-back>
+    
+    <div class="text"
+        [ngClass]="{'text--center': preview.type !== 'GROUP'}">
+        <span class="text__primary">
+            {{ preview.title }}
+        </span>
+        <span
+            *ngIf="preview.type === 'GROUP'" 
+            class="text__secondary">
+            {{ members.join(', ') }}
+        </span>
+    </div>
+    
+    <app-icon
+        src="add-call"></app-icon>
+    <app-icon
+        name="ellipsis-vertical"
+        (click)="onSettings($event)"></app-icon>
+
+</ng-container>

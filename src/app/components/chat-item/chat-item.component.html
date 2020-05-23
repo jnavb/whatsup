@@ -1,0 +1,48 @@
+<div class="chat">
+  <div class="chat__avatar" (click)="onAvatar($event.target)">
+    <div class="chat__image" [ngStyle]="{'background-image': 'url(' + chat?.img + ')'}"></div>
+  </div>
+
+  <div class="chat__content ion-activatable" (click)="onChat()">
+    <ion-ripple-effect type="bounded"></ion-ripple-effect>
+    <div class="chat__content-inner">
+      <div class="chat__content-primary">
+        <div class="chat__title">
+          <ng-container *ngIf="search.highlighted !== ''; else title">
+            <span>{{ search?.prefix }}</span>
+            <span class="chat__highlight">{{ search?.highlighted }}</span>
+            <span>{{ search?.suffix }}</span>
+          </ng-container>
+          <ng-template #title>
+            {{ chat?.title }}
+          </ng-template>
+        </div>
+        <div class="chat__timeline" [ngClass]="{'chat__timeline--new': chat.newMessages }">
+          {{ chat?.lastMessage.date | dateChatPreview }}
+        </div>
+      </div>
+      <div class="chat__content-secondary">
+        <div class="message" [ngSwitch]="chat.lastMessage.type">
+          <ion-icon *ngIf="!chat.lastMessage.from" class="icon" src="assets/icons/tick.svg"
+            [ngClass]="{ 'icon--checked': textMessage.checked }"></ion-icon>
+          <div *ngSwitchCase="'AUDIO'" class="message__audio">
+            <ion-icon src="assets/icons/mic.svg" class="icon icon-mic"></ion-icon>
+            {{ audioMessage.duration | audio }}
+          </div>
+          <div *ngSwitchCase="'IMAGE'">
+            <ion-icon src="assets/icons/camera.svg" class="icon"></ion-icon>
+            Photo
+          </div>
+          <div *ngSwitchCase="'TEXT'">
+            <span *ngIf="chat.lastMessage.from">{{ textMessage.from + ':' }}&nbsp;</span>
+            <span>{{ textMessage.text }}</span>
+          </div>
+        </div>
+        <div *ngIf="chat?.newMessages" class="badge badge--chat">
+          <div>{{ chat?.newMessages }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

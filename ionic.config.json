@@ -1,0 +1,7 @@
+{
+  "name": "whatsup",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,6 @@
+<ion-button class="btn btn-flash"
+  (click)="isFlashActive = !isFlashActive"
+  [ngClass]="{ 'btn-flash--off': isFlashActive }">
+  <ion-icon slot="icon-only" name="flash"></ion-icon>
+  <ion-icon slot="icon-only" name="flash-off"></ion-icon>
+</ion-button>

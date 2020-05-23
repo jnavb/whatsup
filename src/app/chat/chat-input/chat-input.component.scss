@@ -1,0 +1,85 @@
+:host {
+    --size: 60px;
+    
+    display: flex;
+    height: var(--size);
+    padding: 6px;
+    position: relative;
+    background: #EFE7DD;
+}
+
+:host::before {
+    content: "";
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background-color: red;
+    position: absolute;
+    left: -6px;
+    top: -3px;
+    background: url(/assets/images/chat-bg.png);
+    opacity: .06;
+    z-index: -1;
+}
+
+.input-box {
+    --right-buttons-size: 84px;
+    --margin-bottom-buttons: 4px;
+
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    background: white;
+    border-radius: 24px 24px 24px 24px / 24px 24px 24px 24px;
+    box-shadow: 0px 1px 4px -2px #888;
+    overflow: hidden;
+    position: relative;
+
+    app-icon:first-child {
+        margin-left: 4px;
+        align-self: flex-end;
+        margin-bottom: var(--margin-bottom-buttons);
+    }
+
+    app-textarea-auto {
+        width: calc(100% - var(--right-buttons-size));
+        margin-top: 5px;
+    }
+
+    &__right-buttons {
+        display: flex;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        transition: transform 150ms ease-out;
+
+        app-icon:first-child {
+            --size-icon: 23px;
+            transform: rotate(-45deg);
+            margin-right: 4px;
+        }
+
+        app-icon:last-child {
+            --size-icon: 22px;
+            margin-right: 4px;
+        }
+
+        &--typing {
+            transform: translateX(40px);
+        }
+    }
+
+}
+
+.btn {
+    --size-box: 46px;
+    --size-icon: 26px;
+    --background: #00877A;
+    --color: white;
+    box-shadow: 0px 2px 3px 0px #888;
+    margin-left: 4px;
+    margin-top: auto;
+
+    &--send ::ng-deep ion-icon {
+        transform: translateX(2px);
+    }
+}

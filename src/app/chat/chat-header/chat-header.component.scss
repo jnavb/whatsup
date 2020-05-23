@@ -1,0 +1,56 @@
+@import 'fonts';
+
+:host {
+    --height: 55px;
+
+    padding: 8px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--height);
+    background: #075e54;
+    color: white;
+}
+
+app-chat-back,
+app-icon {
+    flex-shrink: 0;
+}
+
+app-icon {
+    --size-box: 38px;
+    --size-icon: 22px;
+    --color: white;
+}
+
+.text {
+    padding: 1px 0;
+    margin: 0 8px 0 6px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    overflow: hidden;
+
+    &__primary {
+        @include font-semibold;
+        font-size: 16px;
+        line-height: 20px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__secondary {
+        font-size: 12px;
+        line-height: 15px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &--center {
+        justify-content: center;
+    }
+}

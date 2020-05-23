@@ -1,0 +1,22 @@
+.arrow {
+    --size-box: 35px;
+    --size-icon: 14px;
+    --background: #F9F8F6;
+    border-radius: 50%;
+    box-shadow: -1px 0 3px 0px grey;
+    opacity: .75;
+    transition: transform 150ms ease-in;
+    transform: scale(0);
+
+    &:active {
+        --background: #ACACAC;
+    }
+
+    &--show {
+        transform: scale(1);
+    }
+}
+
+:host ::ng-deep app-icon ion-icon {
+    transform: translateY(1px) rotateZ(-90deg);
+}

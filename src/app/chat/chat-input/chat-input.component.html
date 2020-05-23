@@ -1,0 +1,30 @@
+<div class="input-box">
+    <app-icon
+        src="emoji"></app-icon>
+    <app-textarea-auto
+        #textarea
+        placeholder="Type a message"
+        (linesChange)="onLinesChange($event)"
+        [onClear]="clearTextArea"
+        [(value)]="text"></app-textarea-auto>
+    <div class="input-box__right-buttons"
+        [ngClass]="{ 'input-box__right-buttons--typing': inputFormatted.length }">
+        <app-icon
+            src="clip"></app-icon>
+        <app-icon
+            src="camera"></app-icon>
+    </div>
+</div>
+
+<ng-container *ngIf="inputFormatted.length; else sendIcon">
+    <app-icon
+        class="btn btn--send"
+        name="send-sharp"
+        (click)="onSend(); textarea.textEl.focus();"></app-icon>
+</ng-container>
+<ng-template #sendIcon>
+    <app-icon
+        class="btn"
+        src="mic"></app-icon>
+</ng-template>
+
